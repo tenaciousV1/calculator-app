@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body[app-theme="theme-1"] {
+    /* backgrounds */
+    --main-background: hsl(222, 26%, 31%);
+    --keypad-background: hsl(223, 31%, 20%);
+    --screen-background: hsl(224deg, 36%, 15%);
+    /* Keys */
+    --command-key-background: hsl(225deg, 21%, 49%);
+    --command-key-shadow: hsl(224deg, 28%, 35%);
+    --command-key-hover: #a2b2e1;
+
+    --equal-key-background: hsl(6deg, 63%, 50%);
+    --equal-key-shadow: hsl(6deg, 70%, 34%);
+    --equal-key-hover: #f96b5b;
+
+    --key-background: hsl(30deg, 25%, 89%);
+    --key-shadow: hsl(28deg, 16%, 65%);
+    --key-hover: #fffffe;
+
+    /* Text */
+    --key-text: hsl(221, 14%, 31%);
+    --equal-key-text: white;
+    --screen-text: white;
+  }
+
+  body[app-theme="theme-2"] {
+    /* backgrounds */
+    --main-background: hsl(0, 0%, 90%);
+    --keypad-background: hsl(0, 5%, 81%);
+    --screen-background: hsl(0, 0%, 93%);
+    /* Keys */
+    --command-key-background: hsl(185, 42%, 37%);
+    --command-key-shadow: hsl(185, 58%, 25%);
+    --command-key-hover: #62b5bc;
+
+    --equal-key-background: hsl(25, 98%, 40%);
+    --equal-key-shadow: hsl(25, 99%, 27%);
+    --equal-key-hover: #ff8a38;
+
+    --key-background: hsl(45, 7%, 89%);
+    --key-shadow: hsl(35, 11%, 61%);
+    --key-hover: #ffffff;
+
+    /* Text */
+    --key-text: hsl(60, 10%, 19%);
+    --equal-key-text: white;
+    --screen-text: hsl(60, 10%, 19%);
+  }
+
+  body[app-theme="theme-3"] {
+    /* backgrounds */
+    --main-background: hsl(268, 75%, 9%);
+    --keypad-background: hsl(268, 71%, 12%);
+    --screen-background: hsl(268, 71%, 12%);
+    /* Keys */
+    --command-key-background: hsl(281, 89%, 26%);
+    --command-key-shadow: hsl(285, 91%, 52%);
+    --command-key-hover: #8631af;
+
+    --equal-key-background: hsl(176, 100%, 44%);
+    --equal-key-shadow: hsl(177, 92%, 70%);
+    --equal-key-hover: #93fff8;
+
+    --key-background: hsl(268, 47%, 21%);
+    --key-shadow: hsl(290, 70%, 36%);
+    --key-hover: #6c34ac;
+
+    /* Text */
+    --key-text: hsl(52, 100%, 62%);
+    --equal-key-text: hsl(198, 20%, 13%);
+    --screen-text: hsl(52, 100%, 62%);
+  }
+
+  body {
+    @apply h-screen bg-main-background;
+    --command-key-text: white;
+  }
+}
+
+@layer components {
+  .custom-range-input::-webkit-slider-thumb {
+    appearance: none;
+    border: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    @apply bg-equal-key-background hover:bg-equal-key-hover;
+  }
+
+  .custom-range-input::-moz-range-thumb {
+    border: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    @apply bg-equal-key-background hover:bg-equal-key-hover;
+  }
+
+  .custom-range-input::-ms-thumb {
+    border: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    @apply bg-equal-key-background hover:bg-equal-key-hover;
+  }
+}
